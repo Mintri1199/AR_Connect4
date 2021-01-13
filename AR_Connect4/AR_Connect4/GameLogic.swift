@@ -35,22 +35,29 @@ class Game {
     func place(column: Int, color: CellState) {
         var colArray = board[column]
         let colEndIndex = colArray.endIndex - 1
+        var cellPosition: Int
 
         for i in stride(from: colEndIndex, to: -1, by: -1) {
             print(colArray[i])
             if colArray[i] == .empty {
                 board[column][i] = color
-                print(board[column][i])
+                cellPosition = i
                 break
             }   
         }
     }
 
+    func checkForWin(col: Int, row: Int, count: Int=1, color: CellState, win: Bool=false) {
+        
+        // check for vertical win
+        // check for horizontal win
+        // check for diagonal win
+    }
+
 
 
 }
-
-let game = Game()
-game.place(column: 0, color: .red)
-game.place(column: 0, color: .blue)
-print(game.board[0])
+//
+//let game = Game()
+//game.place(column: 0, color: .red)
+//game.place(column: 0, color: .blue)

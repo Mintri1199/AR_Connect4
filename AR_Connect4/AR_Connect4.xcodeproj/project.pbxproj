@@ -15,6 +15,10 @@
 		44758C0525AE8ED800F66E51 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44758C0325AE8ED800F66E51 /* LaunchScreen.storyboard */; };
 		44758C1025AE8ED800F66E51 /* AR_Connect4Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44758C0F25AE8ED800F66E51 /* AR_Connect4Tests.swift */; };
 		44758C1B25AE8ED800F66E51 /* AR_Connect4UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44758C1A25AE8ED800F66E51 /* AR_Connect4UITests.swift */; };
+		44758C2C25AEFCF200F66E51 /* GameLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44758C2B25AEFCF100F66E51 /* GameLogic.swift */; };
+		44758C2D25AEFCF200F66E51 /* GameLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44758C2B25AEFCF100F66E51 /* GameLogic.swift */; };
+		44758C2E25AEFCF200F66E51 /* GameLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44758C2B25AEFCF100F66E51 /* GameLogic.swift */; };
+		44758C4325AEFD4500F66E51 /* GameLogicTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44758C4225AEFD4500F66E51 /* GameLogicTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +53,8 @@
 		44758C1625AE8ED800F66E51 /* AR_Connect4UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AR_Connect4UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		44758C1A25AE8ED800F66E51 /* AR_Connect4UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AR_Connect4UITests.swift; sourceTree = "<group>"; };
 		44758C1C25AE8ED800F66E51 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		44758C2B25AEFCF100F66E51 /* GameLogic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameLogic.swift; sourceTree = "<group>"; };
+		44758C4225AEFD4500F66E51 /* GameLogicTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameLogicTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +108,7 @@
 				44758BF825AE8ED700F66E51 /* AppDelegate.swift */,
 				44758BFA25AE8ED700F66E51 /* art.scnassets */,
 				44758BFC25AE8ED700F66E51 /* ViewController.swift */,
+				44758C2B25AEFCF100F66E51 /* GameLogic.swift */,
 				44758BFE25AE8ED700F66E51 /* Main.storyboard */,
 				44758C0125AE8ED800F66E51 /* Assets.xcassets */,
 				44758C0325AE8ED800F66E51 /* LaunchScreen.storyboard */,
@@ -114,6 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				44758C0F25AE8ED800F66E51 /* AR_Connect4Tests.swift */,
+				44758C4225AEFD4500F66E51 /* GameLogicTest.swift */,
 				44758C1125AE8ED800F66E51 /* Info.plist */,
 			);
 			path = AR_Connect4Tests;
@@ -259,6 +267,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44758C2C25AEFCF200F66E51 /* GameLogic.swift in Sources */,
 				44758BFD25AE8ED700F66E51 /* ViewController.swift in Sources */,
 				44758BF925AE8ED700F66E51 /* AppDelegate.swift in Sources */,
 			);
@@ -268,6 +277,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44758C2D25AEFCF200F66E51 /* GameLogic.swift in Sources */,
+				44758C4325AEFD4500F66E51 /* GameLogicTest.swift in Sources */,
 				44758C1025AE8ED800F66E51 /* AR_Connect4Tests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -276,6 +287,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44758C2E25AEFCF200F66E51 /* GameLogic.swift in Sources */,
 				44758C1B25AE8ED800F66E51 /* AR_Connect4UITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
