@@ -15,8 +15,8 @@ enum CellState {
 // Standard board size 7 x 6
 
 class Game {
-    var board = Array(repeating: Array(repeating: CellState.empty, count: 6), count: 7)
-
+    var board = Array(repeating: Array(repeating: CellState.empty, count: 7), count: 6)
+    var winner = CellState.empty
     init() {
     }
 
@@ -33,31 +33,88 @@ class Game {
 
     // Place the player's cell in a column of the board
     func place(column: Int, color: CellState) {
-        var colArray = board[column]
-        let colEndIndex = colArray.endIndex - 1
-        var cellPosition: Int
+        let rowEndIndex = board.endIndex - 1
 
-        for i in stride(from: colEndIndex, to: -1, by: -1) {
-            print(colArray[i])
-            if colArray[i] == .empty {
-                board[column][i] = color
-                cellPosition = i
+        for i in stride(from: rowEndIndex, to: 0, by: -1) {
+            if board[i][column] == .empty {
+                board[i][column] = color
                 break
-            }   
+            }
         }
     }
 
     func checkForWin(col: Int, row: Int, count: Int=1, color: CellState, win: Bool=false) {
-        
-        // check for vertical win
+        // Base Case cell of current position is empty or doesn't not match the argument's color
+        if board[row][col] != color {
+            return 
+        }
+
         // check for horizontal win
+        if checkForHozintal(row: row, col: col, color: color) {
+            winner = color
+            print("\(color) win")
+            return
+        }
+
+        // check for vertical win
         // check for diagonal win
+
+        return
     }
 
+    private func checkForHozintal(row: Int, col: Int, color: CellState) -> Bool {
+        var count = 0
+        var cell = board[row][col]
+        var colPosition = col
 
+        repeat {
+            count += 1
+            colPosition -= 1
+            if colPosition < 0 {
+                break
+            }
+            cell = board[col][colPosition - 1]
+        } while cell == color && count < 4
+
+        cell = board[row][col + 1]
+        colPosition = row
+        
+        while cell == color && count < 4 {
+            count += 1
+            colPosition += 1
+        }
+
+        return count == 4
+    }
+
+    func printGameState() {
+        var tempBoard: [[Int]] = []
+        for row in board {
+            let tempRow: [Int] = row.map { cell in 
+                switch cell {
+                    case .empty:
+                        return 0
+                    case .red: 
+                        return 1
+                    case .blue:
+                        return 2
+                }
+            }
+            tempBoard.append(tempRow)
+        }
+
+        tempBoard.forEach { print($0) }
+         
+    }
 
 }
-//
-//let game = Game()
-//game.place(column: 0, color: .red)
-//game.place(column: 0, color: .blue)
+
+
+let game = Game()
+game.place(column: 0, color: .red)
+game.place(column: 0, color: .blue)
+game.place(column: 1, color: .red)
+game.place(column: 3, color: .red)
+game.place(column: 2, color: .red)
+game.printGameState()
+game.checkForWin(col: 0, row: 5, color: .red)
